@@ -30,3 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # Theming
 
 This project is themed using Nebular Framework and currently supports 3 different themes - Light, Dark and Cosmic
+
+
+# Please Note that this project is still under development. 
