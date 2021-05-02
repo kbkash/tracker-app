@@ -1,0 +1,78 @@
+<nb-card size="giant" fullWidth [nbSpinner]="loading">
+    <nb-card-header>
+        <!-- {{student.username}} -->
+    </nb-card-header>
+
+    <nb-card-body>
+        <form class="form-horizontal">
+            <!-- Student's Roll number used as username -->
+            <div class="field is-horizontal is-fullwidth">
+                <div class="field-label is-medium">
+                  <label class="label">Regd. ID</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control has-icons-left">
+                      <input nbInput fullWidth class="input is-fullwidth" type="text" required placeholder="Username or Student's Reg. ID">
+                      <span class="icon is-large is-left">
+                        <nb-icon icon="person-outline"></nb-icon>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Student's Email -->
+            <div class="field is-horizontal is-fullwidth">
+                <div class="field-label is-medium">
+                    <label class="label">Email</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                    <div class="control has-icons-left">
+                        <input nbInput fullWidth class="input is-fullwidth" type="email" required placeholder="Email - this email will be used to reset the password">
+                        <span class="icon is-large is-left">
+                        <nb-icon icon="email-outline"></nb-icon>
+                        </span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student's Name -->
+            <div class="field is-horizontal is-fullwidth">
+                <div class="field-label is-medium">
+                    <label class="label">Name</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control is-expanded has-icons-left">
+                        <input nbInput class="input" type="text" placeholder="First Name">
+                      </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                          <input nbInput class="input" type="text" placeholder="Middle Name">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control is-expanded has-icons-left">
+                          <input nbInput class="input" type="text" placeholder="Last Name">
+                        </p>
+                    </div>
+                  </div>  
+            </div>
+
+            <div class="field has-text-centered">
+                <button nbButton type="submit" status='primary'>
+                  Add User
+                </button>
+            </div>
+
+          </form>
+    </nb-card-body>
+
+    <!-- <nb-card-footer>
+        pagination here
+    </nb-card-footer> -->
+</nb-card>

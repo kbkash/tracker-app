@@ -1,0 +1,90 @@
+<nb-card size="giant" fullWidth [nbSpinner]="loading">
+    <!-- <nb-card-header>
+        Students
+    </nb-card-header> -->
+
+    <nb-card-body>
+        <div fixed class="columns has-text-centered is-vcentered is-centered is-mobile has-text-light ">
+        
+            <div class="column">
+                Regd. ID
+            </div>
+            <div class="column">
+                Name
+            </div>
+            <!-- <div class="column">
+                Email
+            </div> -->
+            <!-- <div class="column">
+                Phone
+            </div> -->
+            <!-- <div class="column">
+                Address
+            </div> -->
+            <div class="column">
+                Join Session
+            </div>
+            <div class="column">
+                active
+            </div>
+    
+            <div class="column"> 
+                <button nbButton status="primary">
+                    <nb-icon 
+                    icon="plus-square-outline"  
+                    [options]="{animation:{type:'shake'}}" 
+                    (click)="openModal(studentFormWindow, false)"
+                    ></nb-icon>
+                </button>
+                <!-- <nb-icon icon="settings-outline"></nb-icon> -->
+            </div>
+            
+        </div>
+
+        
+        <div 
+        [ngStyle]='lineOnHoverEffect(student.hover)'
+        (mouseover)="student.hover = true"
+        (mouseout)="student.hover = false"
+        class=" columns has-text-centered is-vcentered is-centered  " 
+        *ngFor='let student of students'
+        (click)="openModal(studentFormWindow, student.username)">
+            <div class="column">
+                {{student.username}}
+            </div>
+            <div class="column">
+                {{student.first_name}} {{student.middle_name}} {{student.last_name}}
+            </div>
+            <!-- <div class="column">
+                {{student.email}}
+            </div> -->
+            <!-- <div class="column">
+                {{student.phone}}
+            </div> -->
+            <!-- <div class="column">
+                {{student.address}}
+            </div> -->
+            <div class="column">
+                {{student.join_session}}
+            </div>
+            <div class="column">
+                {{student.is_active}}
+            </div>
+    
+            <div class="column" [ngStyle]="highlightOnHoverEffect(student.hover)" >
+                <nb-icon icon="edit-outline" [options]="{animation:{type:'shake'}}"></nb-icon>
+            </div>
+        </div>
+    </nb-card-body>
+
+    <nb-card-footer>
+        pagination here
+        <!-- <button (click)="openModal(studentFormWindow)">open modal</button> -->
+        
+    </nb-card-footer>
+</nb-card>
+
+
+<ng-template #studentFormWindow let-data>
+    <edit-student [studentID]='data.username' ></edit-student>
+  </ng-template>

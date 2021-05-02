@@ -1,0 +1,32 @@
+
+
+<form [formGroup]='loginForm' (ngSubmit)=doLogin()>
+  <div class="field">
+    <label for="" >Username</label>
+    <div class="control has-icons-left">
+      <input nbInput formControlName='username' fullWidth type="text" placeholder="eg: joedoe" class="input is-fullwidth" required value="kbkash">
+      <span class="icon is-large is-left">
+        <nb-icon icon="person-outline"></nb-icon>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="" >Password</label>
+    <div class="control has-icons-left">
+      <input nbInput formControlName='password' fullWidth type="password" placeholder="eg: ********" class="input is-fullwidth" required value="kbkash">
+      <span class="icon is-large is-left">
+        <nb-icon icon="lock-outline"></nb-icon>
+
+      </span>
+    </div>
+  </div>
+
+  <div class="field has-text-centered">
+    <button nbButton type="submit" status='primary'>
+      Login
+    </button>
+  </div>
+</form>
+
+<!-- <button  (click)=doLogin()>Login</button> -->

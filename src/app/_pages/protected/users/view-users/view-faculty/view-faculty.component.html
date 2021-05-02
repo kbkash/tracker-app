@@ -1,0 +1,90 @@
+<nb-card size="giant" fullWidth [nbSpinner]="loading">
+    <!-- <nb-card-header>
+        Students
+    </nb-card-header> -->
+
+    <nb-card-body>
+        <div fixed class="columns has-text-centered is-vcentered is-centered is-mobile has-text-light ">
+        
+            <div class="column">
+                Name
+            </div>
+            <div class="column">
+                Username
+            </div>
+            <div class="column">
+                Email
+            </div>
+            <div class="column">
+                Phone
+            </div>
+            <div class="column">
+                Address
+            </div>
+            <div class="column">
+                Role
+            </div>
+            <div class="column">
+                Active
+            </div>
+    
+            <div class="column" > 
+                <button nbButton status="primary">
+                    <nb-icon 
+                    icon="plus-square-outline"  
+                    [options]="{animation:{type:'shake'}}" 
+                    (click)="openModal(facultyFormWindow, false)"
+                    ></nb-icon>
+                </button>
+                
+            </div>
+            
+        </div>
+        <div 
+            [ngStyle]="lineOnHoverEffect(faculty.hover)"
+            (mouseover)="faculty.hover = true"
+            (mouseout)="faculty.hover = false"
+            *ngFor='let faculty of faculties, let i=index' 
+            (click)="openModal(facultyFormWindow, faculty.username)" 
+            class="columns has-text-centered is-vcentered is-centered  "
+            >
+                <div class="column ">
+                    {{faculty.first_name}} {{faculty.middle_name}} {{faculty.last_name}}
+                </div>
+                <div class="column">
+                    {{faculty.username}}
+                </div>
+                <div class="column">
+                    {{faculty.email}}
+                </div>
+                <div class="column">
+                    {{faculty.phone}}
+                </div>
+                <div class="column">
+                    {{faculty.address}}
+                </div>
+                <div class="column">
+                    <div *ngFor="let role of faculty.user_role">
+                        {{role}}
+                    </div>
+                </div>
+                <div class="column">
+                    {{faculty.is_active}}
+                </div>
+        
+                <div class="column" [ngStyle]="highlightOnHoverEffect(faculty.hover)" >
+                    <nb-icon icon="edit-outline" [options]="{animation:{type:'shake'}}"></nb-icon>
+                </div>
+        </div>
+    </nb-card-body>
+
+    <nb-card-footer>
+        pagination here
+    </nb-card-footer>
+</nb-card>
+
+
+
+<ng-template #facultyFormWindow let-data >
+    <edit-faculty style="color: blanchedalmond;" [facultyID]='data.username' ></edit-faculty>
+  </ng-template>

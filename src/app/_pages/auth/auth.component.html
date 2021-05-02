@@ -1,0 +1,42 @@
+<nb-layout>
+  <nb-layout-column>
+    <section class='hero is-fullheight'>
+      <div class="hero-body">
+      <div class=" container is-vcentered is-fullheight">
+          <div class="columns is-centered is-mobile ">
+            <div class="column  is-12-mobile is-10-touch is-7-tablet is-5-desktop is-3-widescreen">
+              <nb-flip-card showToggleButton [flipped]="cardFlipped" >
+                <nb-card-front>
+                  <nb-card>
+                      <nb-card-header>
+                        <p class="title is-3 has-text-centered">Login</p>
+                      </nb-card-header>
+                      <nb-card-body>
+                          
+                          <app-login> </app-login>
+                          
+                      </nb-card-body>
+                      <nb-card-footer class="has-text-right">
+                        <a (click)="toggleSide()"> Forgot Password </a>  
+                      </nb-card-footer>
+                    </nb-card>
+                </nb-card-front>
+                <nb-card-back>
+                  <nb-card>
+                    <nb-card-header>
+                      <p class="title is-3 has-text-centered">Reset Password</p>
+                    </nb-card-header>
+                      <nb-card-body>
+                        <app-reset-password> </app-reset-password>
+                        <a (click)="toggleSide()">Go to login</a>
+                      </nb-card-body>
+                    </nb-card>
+                </nb-card-back>
+              </nb-flip-card>          
+            </div>        
+          </div>
+        </div>
+        </div>
+        </section>
+  </nb-layout-column>
+</nb-layout>
